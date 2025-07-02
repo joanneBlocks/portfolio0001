@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 4,
             title: "Portfolio",
-            description: "The Marble Tie | " +
-            "Cool School | " +
-            "Artist Profile",
+            description: "<a href='' target='_blank'>The Marble Tier</a> | " +
+            "<a href='http://www.seriousbyte.com/coolschool/home.html' target='_blank'>Cool School</a> | " +
+            "<a href='https://alpas-ph.com/kristine-costo-artist-profile' target='_blank'>Artist Profile</a>",
             imageUrl: "https://picsum.photos/id/1040/800/600",
             tags: ["Portfolio"]
         },
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 8,
             title: "Work and Skills Summary",
-            description: "Download",
+            description: "<a href='https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view' target='_blank'>Download</a>",
             imageUrl: "https://picsum.photos/id/1036/800/600",
             tags: ["Resumé"]
         },
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "Graphic Design | " +
             "Video Editing",
             imageUrl: "https://picsum.photos/id/1060/800/600",
-            tags: ["Beach", "Tropical", "Paradise"]
+            tags: ["Skills"]
         } 
     ];
 
