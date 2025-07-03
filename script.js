@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 4,
             title: "Portfolio",
-            description: "<a href='' target='_blank'>The Marble Tier</a> | " +
+            description: "<a href='https://themarbletier.netlify.app/' target='_blank'>The Marble Tier</a> | " +
             "<a href='http://www.seriousbyte.com/coolschool/home.html' target='_blank'>Cool School</a> | " +
             "<a href='https://alpas-ph.com/kristine-costo-artist-profile' target='_blank'>Artist Profile</a>",
             imageUrl: "https://picsum.photos/id/1040/800/600",
@@ -45,21 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 5,
             title: "Portfolio",
-            description: "The Marble Tier",
+            description: "The Marble Tier<br><br>" +
+            "<img src='./assets/theMarbleTier.png' alt='The Marble Tier'>",
             imageUrl: "https://picsum.photos/id/1044/800/600",
             tags: ["Portfolio"]
         },
         {
             id: 6,
             title: "Portfolio",
-            description: "Cool School",
+            description: "Cool School<br><br>" +
+            "<img src='./assets/coolSchool.png' alt='The Marble Tier'>",
             imageUrl: "https://picsum.photos/id/1062/800/600",
             tags: ["Portfolio"]
         },
         {
             id: 7,
             title: "Portfolio",
-            description: "Artist Profile",
+            description: "Artist Profile<br><br>" +
+            "<img src='./assets/artistProfile.png' alt='The Marble Tier'>",
             imageUrl: "https://picsum.photos/id/1016/800/600",
             tags: ["Portfolio"]
         },
