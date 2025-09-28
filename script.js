@@ -75,6 +75,13 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             id: 9,
+            title: "Work and Skills Summary",
+            description: "<a href='https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view' target='_blank'>Download</a>",
+            imageUrl: "https://picsum.photos/id/1036/800/600",
+            tags: ["Resumé"]
+        },
+        {
+            id: 10,
             title: "Contact Information",
             description: "Joanne Costo | " + 
             "jscosto@gmail.com | " +
@@ -84,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tags: ["Contact"]
         },
         {
-            id: 10,
+            id: 11,
             title: "Other Works",
             description: "Content Creation | " +
             "Graphic Design | " +
