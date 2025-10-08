@@ -1,31 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ✅ Create a navigation bar container
-    const navBar = document.createElement('div');
-    navBar.className = "navbar";
-
-    // Left side (site name or logo)
-    const siteTitle = document.createElement('div');
-    siteTitle.className = "site-title";
-    siteTitle.textContent = "My Portfolio"; // You can change this
-    navBar.appendChild(siteTitle);
-
-    // Right side (Contact link)
-    const navLinks = document.createElement('div');
-    navLinks.className = "nav-links";
-
-    const contactLink = document.createElement('a');
-    contactLink.textContent = "Contact";
-    contactLink.href = "./contact.html";
-    contactLink.className = "contact-link";
-
-    navLinks.appendChild(contactLink);
-    navBar.appendChild(navLinks);
-
-    // Add navbar to top of page
-    document.body.prepend(navBar);
-
-    // --- your existing image rendering code below ---
     const imageData = [
         {
             id: 1,
@@ -43,10 +17,91 @@ document.addEventListener('DOMContentLoaded', function() {
             "Associate Program Manager (2024), Toddle",
             imageUrl: "https://picsum.photos/id/1015/800/600",
             tags: ["Experience"]
-        }
-        // ... keep the rest of your data
+        },
+        {
+            id: 3,
+            title: "Skills",
+            description: "CSS | " +
+            "Git | " +
+            "HTML | " +
+            "JavaScript | " +
+            "Linux | " +
+            "Node.js | " +
+            "SQL | " +
+            "React.js | " +
+            "TypeScript",
+            imageUrl: "https://picsum.photos/id/1019/800/600",
+            tags: ["Skills"]
+        },
+        {
+            id: 4,
+            title: "Portfolio",
+            description: "<a href='https://themarbletier.netlify.app/' target='_blank'>The Marble Tier</a> | " +
+            "<a href='http://www.seriousbyte.com/coolschool/home.html' target='_blank'>Cool School</a> | " +
+            "<a href='https://alpas-ph.com/kristine-costo-artist-profile' target='_blank'>Artist Profile</a>",
+            imageUrl: "https://picsum.photos/id/1040/800/600",
+            tags: ["Portfolio"]
+        },
+        {
+            id: 5,
+            title: "Portfolio",
+            description: "The Marble Tier<br><br>" +
+            "<img src='./assets/theMarbleTier.png' alt='The Marble Tier'>",
+            imageUrl: "https://picsum.photos/id/1044/800/600",
+            tags: ["Portfolio"]
+        },
+        {
+            id: 6,
+            title: "Portfolio",
+            description: "Cool School<br><br>" +
+            "<img src='./assets/coolSchool.png' alt='The Marble Tier'>",
+            imageUrl: "https://picsum.photos/id/1062/800/600",
+            tags: ["Portfolio"]
+        },
+        {
+            id: 7,
+            title: "Portfolio",
+            description: "Artist Profile<br><br>" +
+            "<img src='./assets/artistProfile.png' alt='The Marble Tier'>",
+            imageUrl: "https://picsum.photos/id/1016/800/600",
+            tags: ["Portfolio"]
+        },
+        {
+            id: 8,
+            title: "Work and Skills Summary",
+            description: "<a href='https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view' target='_blank'>Download</a>",
+            imageUrl: "https://picsum.photos/id/1036/800/600",
+            tags: ["Resumé"]
+        },
+        {
+            id: 9,
+            title: "Work and Skills Summary",
+            description: "<a href='https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view' target='_blank'>Download</a>",
+            imageUrl: "https://picsum.photos/id/1036/800/600",
+            tags: ["Resumé"]
+        },
+        {
+            id: 10,
+            title: "Contact Information",
+            description: "Joanne Costo | " + 
+            "jscosto@gmail.com | " +
+            "+63 9175860524 <br>" +
+            "<a href='./contact.html'>Access Form</a>",
+            imageUrl: "https://picsum.photos/id/1052/800/600",
+            tags: ["Contact"]
+        },
+        {
+            id: 11,
+            title: "Other Works",
+            description: "Content Creation | " +
+            "Graphic Design | " +
+            "Video Editing",
+            imageUrl: "https://picsum.photos/id/1060/800/600",
+            tags: ["Skills"]
+        } 
     ];
 
+    // Render images
     function renderImages() {
         const container = document.getElementById('imageContainer');
         
@@ -67,10 +122,15 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             
             panel.addEventListener('click', function() {
+
                 if (this.classList.contains('active')) {
                     this.classList.remove('active');
                 } else {
-                    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+
+                    document.querySelectorAll('.panel').forEach(p => {
+                        p.classList.remove('active');
+                    });
+
                     this.classList.add('active');
                 }
             });
@@ -78,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             container.appendChild(panel);
         });
     }
+
 
     renderImages();
 });

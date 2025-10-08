@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joanne Costo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Penguin Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="gallery-title">Joanne Costo</h1>
-    
-    <div class="container" id="imageContainer">
-        
+  <div class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">
+    🌙
+  </div>
+
+  <div class="container">
+    <div class="penguin">
+      <div class="belly"></div>
+
+      <div class="eye left-eye">
+        <div class="pupil">
+          <div class="shine"></div>
+        </div>
+      </div>
+
+      <div class="eye right-eye">
+        <div class="pupil">
+          <div class="shine"></div>
+        </div>
+      </div>
+
+      <div class="beak"></div>
     </div>
 
-    <script src="./script.js"></script>
+    <div class="text-area">
+      <h2>I am Joanne Costo.</h2>
+      <h3 id="typewriter"></h3>
+    </div>
+
+    <button class="about-btn" onclick="window.location.href='about.html'">
+      Learn More
+    </button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

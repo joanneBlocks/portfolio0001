@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joanne Costo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Kristine</title>
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <h1 class="gallery-title">Joanne Costo</h1>
-    
-<!--    <div class="container" id="imageContainer">
+  <!-- 🧭 NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">Kristine 🐧</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="theme-toggle">🌙</div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
 
-    </div> -->
+  <!-- 💬 CONTACT SECTION -->
+  <section class="contact-section">
+    <h1>Let’s Connect</h1>
+    <p class="subtitle">Have a question or project in mind? I’d love to hear from you.</p>
 
-    
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+      </div>
 
-    <script src="./script.js"></script>
+      <div class="form-group">
+        <label for="service">Service</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="web">Full-Stack Web Development</option>
+          <option value="design">Visual Design</option>
+          <option value="instructor">Instruction / Coaching</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required placeholder="Your message..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" placeholder="+63 900 000 0000">
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </section>
+
+  <script src="contact.js"></script>
 </body>
 </html>

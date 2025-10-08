@@ -1,144 +1,64 @@
-document.addEventListener('DOMContentLoaded', function() {
+/* 👀 Eye Tracking */
+const eyes = document.querySelectorAll('.eye');
+const pupils = document.querySelectorAll('.pupil');
 
-    const imageData = [
-        {
-            id: 1,
-            title: "About",
-            description: "I thrive on solving everyday problems with code.",
-            imageUrl: "https://picsum.photos/id/1018/800/600",
-            tags: ["About"]
-        },
-        {
-            id: 2,
-            title: "Experience",
-            description: "E-learning Developer (2020), AccessiWheels<br>" +
-            "Learning and Developemnt Manager (2021), Globe Telecom, Inc.<br>" +
-            "Computer Science Teacher (2023), Cambridge International School<br>" +
-            "Associate Program Manager (2024), Toddle",
-            imageUrl: "https://picsum.photos/id/1015/800/600",
-            tags: ["Experience"]
-        },
-        {
-            id: 3,
-            title: "Skills",
-            description: "CSS | " +
-            "Git | " +
-            "HTML | " +
-            "JavaScript | " +
-            "Linux | " +
-            "Node.js | " +
-            "SQL | " +
-            "React.js | " +
-            "TypeScript",
-            imageUrl: "https://picsum.photos/id/1019/800/600",
-            tags: ["Skills"]
-        },
-        {
-            id: 4,
-            title: "Portfolio",
-            description: "<a href='https://themarbletier.netlify.app/' target='_blank'>The Marble Tier</a> | " +
-            "<a href='http://www.seriousbyte.com/coolschool/home.html' target='_blank'>Cool School</a> | " +
-            "<a href='https://alpas-ph.com/kristine-costo-artist-profile' target='_blank'>Artist Profile</a>",
-            imageUrl: "https://picsum.photos/id/1040/800/600",
-            tags: ["Portfolio"]
-        },
-        {
-            id: 5,
-            title: "Portfolio",
-            description: "The Marble Tier<br><br>" +
-            "<img src='./assets/theMarbleTier.png' alt='The Marble Tier'>",
-            imageUrl: "https://picsum.photos/id/1044/800/600",
-            tags: ["Portfolio"]
-        },
-        {
-            id: 6,
-            title: "Portfolio",
-            description: "Cool School<br><br>" +
-            "<img src='./assets/coolSchool.png' alt='The Marble Tier'>",
-            imageUrl: "https://picsum.photos/id/1062/800/600",
-            tags: ["Portfolio"]
-        },
-        {
-            id: 7,
-            title: "Portfolio",
-            description: "Artist Profile<br><br>" +
-            "<img src='./assets/artistProfile.png' alt='The Marble Tier'>",
-            imageUrl: "https://picsum.photos/id/1016/800/600",
-            tags: ["Portfolio"]
-        },
-        {
-            id: 8,
-            title: "Work and Skills Summary",
-            description: "<a href='https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view' target='_blank'>Download</a>",
-            imageUrl: "https://picsum.photos/id/1036/800/600",
-            tags: ["Resumé"]
-        },
-        {
-            id: 9,
-            title: "Work and Skills Summary",
-            description: "<a href='https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view' target='_blank'>Download</a>",
-            imageUrl: "https://picsum.photos/id/1036/800/600",
-            tags: ["Resumé"]
-        },
-        {
-            id: 10,
-            title: "Contact Information",
-            description: "Joanne Costo | " + 
-            "jscosto@gmail.com | " +
-            "+63 9175860524 <br>" +
-            "<a href='./contact.html'>Access Form</a>",
-            imageUrl: "https://picsum.photos/id/1052/800/600",
-            tags: ["Contact"]
-        },
-        {
-            id: 11,
-            title: "Other Works",
-            description: "Content Creation | " +
-            "Graphic Design | " +
-            "Video Editing",
-            imageUrl: "https://picsum.photos/id/1060/800/600",
-            tags: ["Skills"]
-        } 
-    ];
+document.addEventListener('mousemove', (e) => {
+  eyes.forEach((eye, index) => {
+    const rect = eye.getBoundingClientRect();
+    const eyeCenterX = rect.left + rect.width / 2;
+    const eyeCenterY = rect.top + rect.height / 2;
 
-    // Render images
-    function renderImages() {
-        const container = document.getElementById('imageContainer');
-        
-        imageData.forEach(item => {
-            const panel = document.createElement('div');
-            panel.className = 'panel';
-            panel.dataset.id = item.id;
-            
-            panel.innerHTML = `
-                <img src="${item.imageUrl}" alt="${item.title}">
-                <div class="content">
-                    <h3>${item.title}</h3>
-                    <p class="description">${item.description}</p>
-                    <div class="tags">
-                        ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                    </div>
-                </div>
-            `;
-            
-            panel.addEventListener('click', function() {
+    const dx = e.clientX - eyeCenterX;
+    const dy = e.clientY - eyeCenterY;
+    const angle = Math.atan2(dy, dx);
 
-                if (this.classList.contains('active')) {
-                    this.classList.remove('active');
-                } else {
+    const maxMove = 12;
+    const pupilX = Math.cos(angle) * maxMove;
+    const pupilY = Math.sin(angle) * maxMove;
 
-                    document.querySelectorAll('.panel').forEach(p => {
-                        p.classList.remove('active');
-                    });
+    pupils[index].style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+  });
+});
 
-                    this.classList.add('active');
-                }
-            });
-            
-            container.appendChild(panel);
-        });
-    }
+/* 💬 Typewriter Effect with Random Titles */
+const titles = [
+  "Full-Stack Web Developer",
+  "Visual Artist",
+  "Instructor",
+  "UI/UX Designer",
+  "Creative Coder"
+];
 
+const typewriter = document.getElementById("typewriter");
+let i = 0;
+let j = 0;
+let isDeleting = false;
 
-    renderImages();
+function typeEffect() {
+  const currentText = titles[j];
+  const speed = isDeleting ? 50 : 100;
+
+  if (!isDeleting && i < currentText.length) {
+    typewriter.textContent = currentText.substring(0, i + 1);
+    i++;
+  } else if (isDeleting && i > 0) {
+    typewriter.textContent = currentText.substring(0, i - 1);
+    i--;
+  } else if (!isDeleting && i === currentText.length) {
+    setTimeout(() => (isDeleting = true), 1000);
+  } else if (isDeleting && i === 0) {
+    isDeleting = false;
+    j = Math.floor(Math.random() * titles.length);
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+/* 🌗 Theme Toggle */
+const themeToggle = document.getElementById("themeToggle");
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  themeToggle.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
 });
