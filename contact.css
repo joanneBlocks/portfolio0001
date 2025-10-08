@@ -46,6 +46,11 @@ body.dark .navbar {
 .nav-logo {
   font-weight: 600;
   font-size: 1.2rem;
+  text-decoration: none !important;
+}
+
+.nav-logo a:visited {
+  text-decoration: none !important;
 }
 
 .nav-links {
