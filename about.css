@@ -274,10 +274,14 @@ header h1 {
 .stick-info h2 {
   font-size: 1.4rem;
   margin-bottom: 5px;
+  color: white;
+  z-index: 100;
 }
 
 .stick-info p {
   font-size: 0.9rem;
+  color: white;
+  z-index: 100;
 }
 
 body.dark .stick-info h2,
