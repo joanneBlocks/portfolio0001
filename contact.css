@@ -1,0 +1,238 @@
+:root {
+  --bg-light: #f5fcff;
+  --bg-dark: #0d1b2a;
+  --text-light: #333;
+  --text-dark: #f0f0f0;
+  --accent: #007bff;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* 🧭 NAVBAR (reused style) */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  z-index: 300;
+  transition: background 0.3s ease;
+}
+
+body.dark .navbar {
+  background: rgba(13, 27, 42, 0.85);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links li a.active::after,
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+body.dark .nav-links li a {
+  color: var(--text-dark);
+}
+
+.theme-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  z-index: 310;
+}
+
+/* 🍔 HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 310;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: var(--text-light);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .hamburger span {
+  background: var(--text-dark);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* 📱 MOBILE NAV */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.97);
+    width: 85%;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .nav-links.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  body.dark .nav-links {
+    background: rgba(13, 27, 42, 0.97);
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 65px;
+  }
+}
+
+/* 💬 CONTACT FORM */
+.contact-section {
+  margin-top: 100px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.contact-section .subtitle {
+  color: gray;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+input, select, textarea {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+.submit-btn {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+  transform: scale(1.03);
+}
+
+/* DARK MODE ADJUSTMENTS */
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: #162b45;
+  border-color: #334b68;
+  color: var(--text-dark);
+}
+
+body.dark input:focus,
+body.dark select:focus,
+body.dark textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
