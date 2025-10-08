@@ -1,4 +1,4 @@
-// 🌗 Theme toggle
+// 🌗 Theme Toggle
 const themeToggle = document.querySelector(".theme-toggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
@@ -13,7 +13,18 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
 
-// 💌 Form Submission (placeholder functionality)
+// 💌 Toast Function
+function showToast(message, icon = "🐧") {
+  const toastContainer = document.getElementById("toastContainer");
+  const toast = document.createElement("div");
+  toast.className = "toast";
+  toast.innerHTML = `<span>${icon}</span> ${message}`;
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => toast.remove(), 4000);
+}
+
+// 💬 Form Submission
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -22,14 +33,12 @@ contactForm.addEventListener("submit", (e) => {
   const service = document.getElementById("service").value;
   const message = document.getElementById("message").value.trim();
   const email = document.getElementById("email").value.trim();
-  const contact = document.getElementById("contact").value.trim();
 
   if (!name || !service || !message || !email) {
-    alert("Please fill in all required fields.");
+    showToast("Please fill in all required fields.", "⚠️");
     return;
   }
 
-  // Placeholder confirmation
-  alert(`Thank you, ${name}! Your message has been sent successfully.`);
+  showToast(`Thank you, ${name}! Kristine received your message.`, "🐧");
   contactForm.reset();
 });
