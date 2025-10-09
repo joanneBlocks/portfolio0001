@@ -1,11 +1,11 @@
-// 🌗 Theme toggle
+// Theme toggle
 const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   themeToggle.textContent = document.body.classList.contains("dark") ? "🌞" : "🌙";
 });
 
-// 🍔 Hamburger menu
+// Hamburger menu
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
@@ -22,7 +22,7 @@ navLinks.querySelectorAll("a").forEach(link => {
   });
 });
 
-// 🖼 Stick expand/compress logic
+// Stick expand/compress logic
 const sticks = document.querySelectorAll(".stick");
 sticks.forEach(stick => {
   const info = document.createElement("div");

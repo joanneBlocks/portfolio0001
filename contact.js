@@ -1,11 +1,11 @@
-// 🌗 Theme Toggle
+// Theme Toggle
 const themeToggle = document.querySelector(".theme-toggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// 🍔 Hamburger Menu
+// Hamburger Menu
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 hamburger.addEventListener("click", () => {
@@ -13,7 +13,7 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
 
-// 💌 Toast Function
+// Toast Function
 function showToast(message, icon = "🐧") {
   const toastContainer = document.getElementById("toastContainer");
   const toast = document.createElement("div");
@@ -24,7 +24,7 @@ function showToast(message, icon = "🐧") {
   setTimeout(() => toast.remove(), 4000);
 }
 
-// 💬 Form Submission
+// Form Submission
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();

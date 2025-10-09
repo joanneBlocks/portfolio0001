@@ -1,4 +1,4 @@
-/* 👀 Eye Tracking */
+/* Eye Tracking */
 const eyes = document.querySelectorAll('.eye');
 const pupils = document.querySelectorAll('.pupil');
 
@@ -20,7 +20,7 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-/* 💬 Typewriter Effect with Random Titles */
+/* Typewriter Effect with Random Titles */
 const titles = [
   "Full-Stack Web Developer",
   "Visual Artist",
@@ -56,7 +56,7 @@ function typeEffect() {
 
 typeEffect();
 
-/* 🌗 Theme Toggle */
+/* Theme Toggle */
 const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
