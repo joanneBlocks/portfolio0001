@@ -51,14 +51,19 @@ document.querySelectorAll('.stick').forEach(stick => {
 
     const title = stick.getAttribute('data-title');
     const desc = stick.getAttribute('data-desc');
-    const btnText = stick.getAttribute('data-btn') || "Read More";
+
+    let buttonHTML = '';
+    if (stick.classList.contains('cv')) {
+      buttonHTML = `<button class="stick-btn" href="https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view?usp=sharing">Download CV</button>`;
+    }
 
     stick.innerHTML = `
       <div class="stick-info">
         <h2>${title}</h2>
         <p>${desc}</p>
-        <button class="stick-btn">${btnText}</button>
+        ${buttonHTML}
       </div>
     `;
   });
 });
+
