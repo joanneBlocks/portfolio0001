@@ -23,7 +23,7 @@ body.dark {
   color: var(--text-dark);
 }
 
-/* 🧭 NAVBAR */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -118,7 +118,7 @@ body.dark .hamburger span {
   background: var(--text-dark);
 }
 
-/* ✨ Balanced Morph Animation */
+/* Balanced Morph Animation */
 .hamburger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -130,7 +130,7 @@ body.dark .hamburger span {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* 📱 MOBILE NAV */
+/* MOBILE NAV */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -169,7 +169,7 @@ body.dark .hamburger span {
   }
 }
 
-/* 💬 CONTACT FORM */
+/* CONTACT FORM */
 .contact-section {
   margin-top: 100px;
   text-align: center;
@@ -240,7 +240,7 @@ textarea:focus {
   transform: scale(1.03);
 }
 
-/* 🌙 DARK MODE */
+/* DARK MODE */
 body.dark input,
 body.dark select,
 body.dark textarea {
@@ -256,7 +256,7 @@ body.dark textarea:focus {
   box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
 }
 
-/* 🐧 TOAST NOTIFICATION (Top Center Version) */
+/* TOAST NOTIFICATION (Top Center Version) */
 #toastContainer {
   position: fixed;
   top: 80px;
