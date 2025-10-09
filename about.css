@@ -284,6 +284,23 @@ header h1 {
   z-index: 100;
 }
 
+.stick-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #ff9800;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stick-btn:hover {
+  background: #ffa726;
+  transform: translateY(-2px);
+}
+
 body.dark .stick-info h2,
 body.dark .stick-info p {
   color: #f0f0f0;

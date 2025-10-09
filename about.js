@@ -42,3 +42,23 @@ sticks.forEach(stick => {
     stick.classList.add("active");
   });
 });
+
+// Stick Info Button
+document.querySelectorAll('.stick').forEach(stick => {
+  stick.addEventListener('click', () => {
+    document.querySelectorAll('.stick').forEach(s => s.classList.remove('active'));
+    stick.classList.add('active');
+
+    const title = stick.getAttribute('data-title');
+    const desc = stick.getAttribute('data-desc');
+    const btnText = stick.getAttribute('data-btn') || "Read More";
+
+    stick.innerHTML = `
+      <div class="stick-info">
+        <h2>${title}</h2>
+        <p>${desc}</p>
+        <button class="stick-btn">${btnText}</button>
+      </div>
+    `;
+  });
+});
