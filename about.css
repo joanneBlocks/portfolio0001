@@ -249,6 +249,7 @@ header h1 {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .stick.active::after {
@@ -287,19 +288,23 @@ header h1 {
 .stick-btn {
   margin-top: 12px;
   padding: 8px 16px;
-  background: #ff9800;
-  border: none;
-  border-radius: 8px;
+  background: #007bff;
   color: #fff;
   font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none; /* 🔥 removes underline */
+  display: inline-block;
   cursor: pointer;
+  z-index: 10; /* ensure it’s on top */
+  position: relative;
   transition: all 0.3s ease;
 }
 
 .stick-btn:hover {
-  background: #ffa726;
+  background: #339cff;
   transform: translateY(-2px);
 }
+
 
 body.dark .stick-info h2,
 body.dark .stick-info p {
