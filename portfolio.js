@@ -43,7 +43,7 @@ sticks.forEach(stick => {
   });
 });
 
-// Stick Info Button
+// Stick Info Button Logic
 document.querySelectorAll('.stick').forEach(stick => {
   stick.addEventListener('click', () => {
     document.querySelectorAll('.stick').forEach(s => s.classList.remove('active'));
@@ -53,10 +53,18 @@ document.querySelectorAll('.stick').forEach(stick => {
     const desc = stick.getAttribute('data-desc');
 
     let buttonHTML = '';
-    if (stick.classList.contains('cv')) {
-      buttonHTML = `<button class="stick-btn" href="https://drive.google.com/file/d/1mw5tNdwtORkDm3Oqi8K-kr1velW7f1kx/view?usp=sharing">Download CV</button>`;
+
+    if (stick.classList.contains('crittercove')) {
+      buttonHTML = `<a class="stick-btn" href="https://joanneblocks.github.io/2025_CritterCove/" target="_blank">Learn More</a>`;
+    } else if (stick.classList.contains('themarbletier')) {
+      buttonHTML = `<a class="stick-btn" href="https://themarbletier.netlify.app/" target="_blank">Learn More</a>`;
+    } else if (stick.classList.contains('artistprofile')) {
+      buttonHTML = `<a class="stick-btn" href="https://alpas-ph.com/kristine-costo-artist-profile" target="_blank">Learn More</a>`;
+    } else if (stick.classList.contains('coolschool')) {
+      buttonHTML = `<a class="stick-btn" href="http://www.seriousbyte.com/coolschool/home.html" target="_blank">Learn More</a>`;
     }
 
+    // Update content inside stick-info only
     stick.innerHTML = `
       <div class="stick-info">
         <h2>${title}</h2>
@@ -64,6 +72,13 @@ document.querySelectorAll('.stick').forEach(stick => {
         ${buttonHTML}
       </div>
     `;
+
+    // Re-bind click prevention for newly created link
+    const btn = stick.querySelector('.stick-btn');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevents triggering stick click
+      });
+    }
   });
 });
-
