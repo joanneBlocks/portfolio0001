@@ -39,6 +39,6 @@ contactForm.addEventListener("submit", (e) => {
     return;
   }
 
-  showToast(`Thank you, ${name}! Kristine received your message.`, "🐧");
+  showToast(`Thank you, ${name}! Joanne received your message.`, "🐧");
   contactForm.reset();
 });
