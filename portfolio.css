@@ -19,7 +19,7 @@ body.dark {
   color: var(--text-dark);
 }
 
-/* 🧭 NAVBAR */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -51,7 +51,7 @@ body.dark .navbar {
   text-decoration: none !important;
 }
 
-/* 🔗 NAV LINKS */
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
@@ -89,7 +89,7 @@ body.dark .nav-links li a {
   color: var(--text-dark);
 }
 
-/* 🌗 Theme toggle */
+/* Theme toggle */
 .theme-toggle {
   font-size: 1.5rem;
   cursor: pointer;
@@ -97,7 +97,7 @@ body.dark .nav-links li a {
   z-index: 310;
 }
 
-/* 🍔 HAMBURGER */
+/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -136,7 +136,7 @@ body.dark .hamburger span {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* 📱 MOBILE MENU */
+/* MOBILE MENU */
 @keyframes dropdownBounce {
   0% {
     transform: translateX(-50%) translateY(-20px);
