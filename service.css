@@ -20,7 +20,7 @@ body.dark {
   color: var(--text-dark);
 }
 
-/* 🧭 NAVBAR */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
@@ -86,7 +86,7 @@ body.dark .nav-links li a {
   z-index: 310;
 }
 
-/* 🍔 HAMBURGER */
+/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -157,7 +157,7 @@ body.dark .hamburger span {
   }
 }
 
-/* 🦢 HERO */
+/* HERO */
 .hero {
   margin-top: 100px;
   text-align: center;
@@ -175,7 +175,7 @@ body.dark .hamburger span {
   margin: 0 auto;
 }
 
-/* 💼 SERVICE GRID */
+/* SERVICE GRID */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -253,7 +253,7 @@ body.dark .card-back {
   background: #0056b3;
 }
 
-/* 🐧 TOAST */
+/* TOAST */
 #toastContainer {
   position: fixed;
   top: 80px;
