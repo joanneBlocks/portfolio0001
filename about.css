@@ -242,11 +242,17 @@ header h1 {
   transform: scale(1);
 }
 
+/* DARKER OVERLAY FOR READABILITY */
 .stick::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -256,15 +262,22 @@ header h1 {
   opacity: 1;
 }
 
+/* IMPROVED TEXT VISIBILITY */
 .stick-info {
   position: absolute;
-  bottom: 20px;
-  color: white;
+  bottom: 25px;
+  left: 0;
+  width: 100%;
   text-align: center;
+  color: #fff;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  padding: 0 10px;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 15px;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 20px 20px;
 }
 
 .stick.active .stick-info {
@@ -275,16 +288,15 @@ header h1 {
 .stick-info h2 {
   font-size: 1.4rem;
   margin-bottom: 5px;
-  color: white;
-  z-index: 100;
+  color: #fff;
 }
 
 .stick-info p {
-  font-size: 0.9rem;
-  color: white;
-  z-index: 100;
+  font-size: 0.95rem;
+  color: #f2f2f2;
 }
 
+/* BUTTON STYLING */
 .stick-btn {
   margin-top: 12px;
   padding: 8px 16px;
@@ -292,10 +304,10 @@ header h1 {
   color: #fff;
   font-weight: 600;
   border-radius: 8px;
-  text-decoration: none; /* removes underline */
+  text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  z-index: 10; /* ensure it’s on top */
+  z-index: 10;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -305,7 +317,7 @@ header h1 {
   transform: translateY(-2px);
 }
 
-
+/* DARK MODE TEXT ADJUSTMENT */
 body.dark .stick-info h2,
 body.dark .stick-info p {
   color: #f0f0f0;
