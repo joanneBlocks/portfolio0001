@@ -283,7 +283,6 @@ body.dark .hamburger span {
 
 /* Dark mode support */
 body.dark .service-card {
-  background: #162b45;
   color: var(--text-dark);
   border-color: #1e385d;
 }
@@ -441,3 +440,4 @@ body.dark .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   color: #aaa;
 }
+
