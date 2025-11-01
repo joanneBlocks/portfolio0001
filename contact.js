@@ -42,3 +42,6 @@ contactForm.addEventListener("submit", (e) => {
   showToast(`Thank you, ${name}! Joanne received your message.`, "🐧");
   contactForm.reset();
 });
+
+// AUTO-UPDATE YEAR IN FOOTER
+document.getElementById("year").textContent = new Date().getFullYear();

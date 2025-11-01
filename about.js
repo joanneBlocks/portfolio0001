@@ -77,3 +77,5 @@ document.querySelectorAll('.stick').forEach(stick => {
   });
 });
 
+// AUTO-UPDATE YEAR IN FOOTER
+document.getElementById("year").textContent = new Date().getFullYear();

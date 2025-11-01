@@ -33,3 +33,6 @@ document.querySelectorAll(".learn-btn").forEach((btn) => {
     showToast("More details coming soon!");
   });
 });
+
+// AUTO-UPDATE YEAR IN FOOTER
+document.getElementById("year").textContent = new Date().getFullYear();
